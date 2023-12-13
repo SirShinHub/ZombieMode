@@ -3,7 +3,6 @@ local function updateESP()
     local player = game.Players.LocalPlayer
     if ESPNUM then
         pcall(function()
-            -- Existing code for Treasure chests
             for i,v in pairs(game:GetService("Workspace").Interactions.Nodes.Treasure:GetChildren()) do
                 if tonumber(v.Name) ~= nil then
                     local modelName = "Empty"
@@ -26,19 +25,6 @@ local function updateESP()
                             break
                         end
                     end
-                end
-            -- New code for Eggs
-            for i,v in pairs(game:GetService("Workspace").Interactions.Interactions.Eggs.ActiveNodes:GetChildren()) do
-                if tonumber(v.Name) ~= nil then
-                    local modelName = "Empty"
-                    local color = Color3.fromRGB(255, 0, 0) -- Red color for the ESP
-                    for _,model in pairs(v:GetChildren()) do
-                        if model:IsA("Model") then
-                            modelName = model.Name
-                            break
-                        end
-                    end
-                    if v ~= nil and v.Name ~= "" then
                     if not v:FindFirstChild("gui") then
                         local gui = Instance.new("BillboardGui",v)
                         gui.Name = "gui"
@@ -73,15 +59,10 @@ local function updateESP()
                 v:FindFirstChild("gui"):Destroy()
             end
         end
-        for i,v in pairs(game:GetService("Workspace").Interactions.Interactions.Eggs.ActiveNodes:GetChildren()) do
-            if v:FindFirstChild("gui") then
-                v:FindFirstChild("gui"):Destroy()
-            end
-        end
     end
 end
 
 local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(updateESP)
 
--- Updated 3
+-- Update ?
