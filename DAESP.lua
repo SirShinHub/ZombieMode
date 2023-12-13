@@ -38,6 +38,7 @@ local function updateESP()
                             break
                         end
                     end
+                    if v ~= nil then
                     if not v:FindFirstChild("gui") then
                         local gui = Instance.new("BillboardGui",v)
                         gui.Name = "gui"
@@ -83,4 +84,4 @@ end
 local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(updateESP)
 
--- Updated
+-- Updated 2
