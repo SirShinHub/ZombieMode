@@ -40,7 +40,7 @@ function updateESP()
 
   -- Loop through chest nodes (optional)
   if ESPNUM then
-    for i, v in pairs(game:GetService("Workspace").Interactions.Nodes.Treasure:GetChildren()) do
+    for v in game:GetService("Workspace").Interactions.Nodes.Treasure:GetChildren():Filter(function(v) return tonumber(v.Name) ~= nil end) do
       if tonumber(v.Name) ~= nil then
         local modelName = "Empty"
         local color = Color3.fromRGB(236, 0, 255)
@@ -57,7 +57,7 @@ function updateESP()
             end
 
             -- Check if the chest is opened
-            if model:FindFirstChild("HumanoidRootPart") and model.HumanoidRootPart.Dead.Value then
+            if model:FindFirstChild("Humanoid") and model.Humanoid.Dead.Value then
                 modelName = "Opened"
                 color = Color3.fromRGB(255, 0, 0)
               end
