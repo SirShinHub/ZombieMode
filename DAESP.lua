@@ -32,7 +32,7 @@ local function updateESP()
                         gui.Active = true
                         gui.AlwaysOnTop = true
                         gui.LightInfluence = 1.000
-                        gui.Size = UDim2.new(0, 150, 0, 100)
+                        gui.Size = UDim2.new(0, 120, 0, 100)
                         local esp = Instance.new("TextLabel",gui)
                         esp.Name = "esp"
                         esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
