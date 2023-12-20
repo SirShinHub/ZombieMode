@@ -29,7 +29,7 @@ local function updateESP1()
                             esp.TextSize = 15.000
                             esp.TextStrokeTransparency = 0.000
                             esp.TextWrapped = false
-                            esp.TextColor3 = Color3.fromRGB(255, 255, 50)
+                            esp.TextColor3 = Color3.fromRGB(241, 183, 143)
                             
                             esp.Text = "Eggs" -- ตั้งชื่อของ Label เป็น "Eggs"
                         elseif modelPrimaryPart then
